@@ -11,6 +11,9 @@
       <v-btn @click="login()">
         ログイン
       </v-btn>
+       <v-btn @click="signOut()">
+        ログアウト
+      </v-btn>
     </div>
   </v-container>
 </template>
@@ -47,6 +50,19 @@ export default {
           mail:this.mail
         })
       })
+    },
+    signOut() {
+      const auth = this.$firebase.auth()
+      auth
+          .signOut()
+          .then(() => {
+            console.log('ログアウトしました');
+            location.reload();
+          })
+          .catch((error) => {
+            console.log(`ログアウト時にエラーが発生しました (${error})`);
+          });
+      
     }
   }
 }
