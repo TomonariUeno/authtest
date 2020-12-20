@@ -15,6 +15,8 @@ const firebaseConfig = {
   };
 
 firebase.initializeApp(firebaseConfig);
+export const auth = firebase.auth()
+export const db = firebase.firestore()
 
 export default function(app,inject){
     inject('firebase',firebase)
