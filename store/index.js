@@ -9,11 +9,13 @@ export default () => new Vuex.Store({
             uid:""
         },
         userInfo:null
-	},
+    },
+    
 	getters: {
         loginInfo: (state) => state.loginInfo,
         userInfo: (state) => state.userInfo,
-	},
+    },
+    
 	mutations: {
 		setloginInfo(state, loginInfo) {
 			state.loginInfo = loginInfo
@@ -23,7 +25,8 @@ export default () => new Vuex.Store({
             state.userInfo = userInfo
         }
         
-	},
+    },
+    
 	actions:{
 		async getUserInfo({commit,state}){
             //const db = this.$firebase.firestore()
